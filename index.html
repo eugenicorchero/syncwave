@@ -10,44 +10,43 @@
     <style>
         :root { --accent: #0056ff; --bg: #000000; --text: #f5f5f5; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
         .btn-blue { background-color: var(--accent); transition: all 0.3s ease; }
-        .btn-blue:hover { filter: brightness(1.2); transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,86,255,0.2); }
+        .btn-blue:hover { filter: brightness(1.2); transform: translateY(-1px); box-shadow: 0 10px 30px rgba(0,86,255,0.3); }
         input, select, textarea { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; color: white !important; font-size: 14px; }
-        input:focus { border-color: var(--accent) !important; outline: none; }
-        .active-lang { color: var(--accent); font-weight: bold; }
-        .waveform-box { background: rgba(255,255,255,0.02); border-radius: 8px; padding: 10px; }
+        input:focus, select:focus, textarea:focus { border-color: var(--accent) !important; outline: none; background: rgba(255,255,255,0.08) !important; }
+        .active-lang { color: var(--accent); font-weight: bold; border-bottom: 2px solid var(--accent); }
+        .waveform-box { background: rgba(255,255,255,0.01); border-radius: 12px; padding: 12px; border: 1px solid rgba(255,255,255,0.05); }
     </style>
 </head>
 <body>
 
     <!-- NAVEGACIÓN -->
-    <nav class="fixed w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center glass">
+    <nav class="fixed w-full z-50 px-6 md:px-12 py-4 flex justify-between items-center glass">
         <div class="flex items-center gap-4">
-            <!-- LOGO PNG -->
-            <img id="logo-img" src="https://drive.google.com/uc?export=download&id=TU_ID_DE_LOGO_AQUI" alt="Sync Wave" class="h-8 md:h-10">
+            <!-- Cargará tu logo.png del repositorio -->
+            <img src="./logo.png" alt="Sync Wave Logo" class="h-10 md:h-12 w-auto">
             <div class="font-black tracking-tighter text-xl uppercase italic">Sync Wave</div>
         </div>
         <div class="flex gap-8 items-center">
             <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
                 <a href="#works" data-i18n="nav-works">Portfolio</a>
-                <a href="#duo" data-i18n="nav-duo">Estudio</a>
+                <a href="#duo" data-i18n="nav-duo">Nosotros</a>
                 <a href="#contact" data-i18n="nav-contact">Contacto</a>
             </div>
             <div class="text-[11px] font-bold cursor-pointer border-l border-white/10 pl-6 flex gap-3">
-                <span id="btn-es" onclick="setLang('es')" class="active-lang cursor-pointer">ES</span>
-                <span class="text-white/10">|</span>
-                <span id="btn-en" onclick="setLang('en')" class="cursor-pointer">EN</span>
+                <span id="btn-es" onclick="setLang('es')" class="active-lang cursor-pointer py-1">ES</span>
+                <span id="btn-en" onclick="setLang('en')" class="cursor-pointer py-1 text-white/40 hover:text-white">EN</span>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="h-screen flex flex-col justify-center px-6 md:px-24 relative overflow-hidden bg-black">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
         <div class="z-10 max-w-6xl">
-            <span class="text-[10px] tracking-[0.5em] uppercase text-blue-500 font-bold mb-8 block">Barcelona Based Studio</span>
+            <span class="text-[10px] tracking-[0.6em] uppercase text-blue-500 font-bold mb-8 block">Barcelona Based Studio</span>
             
             <h1 id="hero-title" class="text-6xl md:text-[8.5rem] font-black leading-[0.85] tracking-tighter mb-12 uppercase italic">
                 Armonía <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-400 to-white">Sintetizada.</span>
@@ -58,7 +57,7 @@
                     Diseñamos la identidad sonora de proyectos multimedia donde la precisión técnica se encuentra con la arquitectura emocional.
                 </p>
                 
-                <a id="hero-cta" href="TU_LINK_DE_DRIVE_A_CARPETA_O_PDF" target="_blank" class="group flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-blue-600 hover:text-white transition-all">
+                <a id="hero-cta" href="https://drive.google.com/drive/folders/1yuw_l80eVgotfiupWJP97zWpGm7K1Kc9?usp=drive_link" target="_blank" class="group flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-blue-600 hover:text-white transition-all">
                     <span>Full Portfolio (Drive)</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
@@ -71,7 +70,7 @@
         <h2 data-i18n="section-works" class="text-[10px] uppercase tracking-[0.6em] text-blue-500 mb-20 font-bold">Música Seleccionada</h2>
         
         <div id="tracks-container" class="space-y-4 max-w-6xl">
-            <!-- Cargado por JS -->
+            <!-- Cargado por JavaScript -->
         </div>
     </section>
 
@@ -80,25 +79,25 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20">
             <div class="md:col-span-2 space-y-24">
                 <!-- MARC CARREY -->
-                <div class="relative pl-8 border-l-2 border-blue-600/30">
-                    <h3 class="text-4xl font-black mb-2 uppercase">Marc Carrey</h3>
+                <div class="relative pl-8 border-l-2 border-blue-600/40">
+                    <h3 class="text-4xl font-black mb-2 uppercase tracking-tighter">Marc Carrey</h3>
                     <p data-i18n="marc-role" class="text-blue-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-6">Composición, Arreglos & Concepto</p>
-                    <p data-i18n="marc-bio" class="text-white/50 text-lg leading-relaxed font-light">
+                    <p data-i18n="marc-bio" class="text-white/60 text-lg leading-relaxed font-light">
                         Arquitecto de la narrativa musical. Con 10 años de trayectoria en composición y grabación, Marc estructura armonías complejas con una visión clara del propósito visual y emocional de cada pieza.
                     </p>
                 </div>
                 <!-- EUGENI CORCHERO -->
-                <div class="relative pl-8 border-l-2 border-blue-600/30">
-                    <h3 class="text-4xl font-black mb-2 uppercase">Eugeni Corchero</h3>
+                <div class="relative pl-8 border-l-2 border-blue-600/40">
+                    <h3 class="text-4xl font-black mb-2 uppercase tracking-tighter">Eugeni Corchero</h3>
                     <p data-i18n="eugeni-role" class="text-blue-500 font-bold text-[10px] uppercase tracking-[0.2em] mb-6">Sintetización & Diseño Sonoro</p>
-                    <p data-i18n="eugeni-bio" class="text-white/50 text-lg leading-relaxed font-light">
+                    <p data-i18n="eugeni-bio" class="text-white/60 text-lg leading-relaxed font-light">
                         Explorador de nuevas fronteras sonoras. Experto en síntesis y texturización, Eugeni utiliza su dominio de Ableton Live y hardware para fusionar el mundo orgánico con el digital.
                     </p>
                 </div>
             </div>
 
             <!-- TECH STACK -->
-            <div class="glass p-10 rounded-3xl h-fit border border-white/10">
+            <div class="glass p-10 rounded-3xl h-fit border border-white/10 shadow-2xl">
                 <h4 data-i18n="tech-title" class="text-[10px] font-bold uppercase tracking-widest mb-10 text-blue-500">Tech Stack</h4>
                 <div class="space-y-8">
                     <div>
@@ -115,7 +114,7 @@
                     </div>
                     <div>
                         <span class="text-[9px] text-white/30 uppercase block mb-1 font-bold">Network</span>
-                        <p class="text-sm font-medium italic text-blue-300/60 font-light">Collaborations with BCN Studios</p>
+                        <p class="text-sm font-medium italic text-blue-400/80 font-light">Collaborations with BCN Studios</p>
                     </div>
                 </div>
             </div>
@@ -125,21 +124,37 @@
     <!-- FORMULARIO -->
     <section id="contact" class="py-32 px-6 md:px-24">
         <div class="max-w-4xl mx-auto">
-            <h2 id="contact-title" class="text-5xl md:text-7xl font-black uppercase mb-16 tracking-tighter">Iniciemos un proyecto.</h2>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="email" placeholder="Email" class="w-full">
-                <select class="w-full appearance-none">
-                    <option>Advertising / Publicidad</option>
-                    <option>Video Games / Videojuegos</option>
-                    <option>Cinema / Film</option>
-                </select>
-                <input type="text" placeholder="Plazo / Deadline" class="w-full">
-                <select class="w-full appearance-none">
-                    <option>One track / Un tema</option>
-                    <option>Full Soundtrack / BSO</option>
-                </select>
-                <textarea data-i18n-placeholder="form-msg-ph" placeholder="Descripción del proyecto..." rows="4" class="md:col-span-2 w-full"></textarea>
-                <button id="form-btn" class="md:col-span-2 btn-blue py-6 rounded-xl font-black uppercase tracking-widest text-xs">Enviar Solicitud</button>
+            <h2 id="contact-title" class="text-5xl md:text-7xl font-black uppercase mb-16 tracking-tighter italic">Iniciemos un proyecto.</h2>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white/[0.02] p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
+                <div class="flex flex-col">
+                    <label class="text-[10px] uppercase font-bold text-blue-500 mb-2">Email</label>
+                    <input type="email" placeholder="email@ejemplo.com" class="w-full">
+                </div>
+                <div class="flex flex-col">
+                    <label data-i18n="form-type" class="text-[10px] uppercase font-bold text-blue-500 mb-2">Tipo de Proyecto</label>
+                    <select class="w-full appearance-none">
+                        <option>Advertising / Publicidad</option>
+                        <option>Video Games / Videojuegos</option>
+                        <option>Cinema / Film</option>
+                        <option>Audio Branding</option>
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label data-i18n="form-deadline" class="text-[10px] uppercase font-bold text-blue-500 mb-2">Plazo</label>
+                    <input type="text" placeholder="Ej: 2 meses" class="w-full">
+                </div>
+                <div class="flex flex-col">
+                    <label data-i18n="form-scope" class="text-[10px] uppercase font-bold text-blue-500 mb-2">Volumen</label>
+                    <select class="w-full appearance-none">
+                        <option>One track / Un tema</option>
+                        <option>Full Soundtrack / BSO</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2 flex flex-col">
+                    <label data-i18n="form-msg" class="text-[10px] uppercase font-bold text-blue-500 mb-2">Mensaje / Brief</label>
+                    <textarea data-i18n-placeholder="form-msg-ph" placeholder="Descripción del proyecto..." rows="4" class="w-full"></textarea>
+                </div>
+                <button id="form-btn" class="md:col-span-2 btn-blue py-6 rounded-xl font-black uppercase tracking-[0.2em] text-xs">Enviar Solicitud</button>
             </form>
         </div>
     </section>
@@ -153,9 +168,9 @@
         const i18n = {
             es: {
                 "nav-works": "Portfolio", "nav-duo": "Estudio", "nav-contact": "Contacto",
-                "hero-title": "Armonía <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-400 to-white'>Sintetizada.</span>",
+                "hero-title": "Armonía <br><span class='text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-400 to-white text-shadow-lg'>Sintetizada.</span>",
                 "hero-sub": "Diseñamos la identidad sonora de proyectos multimedia donde la precisión técnica se encuentra con la arquitectura emocional.",
-                "hero-cta": "Portfolio Completo (Drive)",
+                "hero-cta": "Full Portfolio (Drive)",
                 "section-works": "Música Seleccionada",
                 "marc-role": "Composición, Arreglos & Concepto",
                 "marc-bio": "Arquitecto de la narrativa musical. Con 10 años de trayectoria en composición y grabación, Marc estructura armonías complejas con una visión clara del propósito visual y emocional de cada pieza.",
@@ -166,6 +181,10 @@
                 "tech-exp": "Experiencia",
                 "tech-exp-val": "10 años en composición y grabación",
                 "contact-title": "Iniciemos un proyecto.",
+                "form-type": "Tipo de Proyecto",
+                "form-deadline": "Plazo Estimado",
+                "form-scope": "Volumen",
+                "form-msg": "Mensaje / Brief",
                 "form-msg-ph": "Descripción del proyecto...",
                 "form-btn": "Enviar Solicitud"
             },
@@ -184,6 +203,10 @@
                 "tech-exp": "Experience",
                 "tech-exp-val": "10 years in composition and recording",
                 "contact-title": "Start a project.",
+                "form-type": "Project Type",
+                "form-deadline": "Estimated Deadline",
+                "form-scope": "Scope",
+                "form-msg": "Message / Brief",
                 "form-msg-ph": "Project description...",
                 "form-btn": "Send Request"
             }
@@ -202,17 +225,17 @@
             const textarea = document.querySelector('textarea');
             textarea.placeholder = i18n[lang]['form-msg-ph'];
 
-            document.getElementById('btn-es').classList.toggle('active-lang', lang === 'es');
-            document.getElementById('btn-en').classList.toggle('active-lang', lang === 'en');
+            document.getElementById('btn-es').className = lang === 'es' ? 'active-lang cursor-pointer py-1' : 'cursor-pointer py-1 text-white/40 hover:text-white';
+            document.getElementById('btn-en').className = lang === 'en' ? 'active-lang cursor-pointer py-1' : 'cursor-pointer py-1 text-white/40 hover:text-white';
         }
 
-        // LISTA DE CANCIONES (AQUÍ PONES TUS IDS DE DRIVE)
+        // IDS DE TUS CANCIONES DE DRIVE
         const tracks = [
-            { id: 1, title: "Urban Textures", tag: "Advertising", driveId: "TU_ID_1" },
-            { id: 2, title: "Electronic Narrative", tag: "Multimedia", driveId: "TU_ID_2" },
-            { id: 3, title: "Harmonic Pulse", tag: "Composition", driveId: "TU_ID_3" },
-            { id: 4, title: "Digital Nature", tag: "Synthesis", driveId: "TU_ID_4" },
-            { id: 5, title: "Cinematic Flow", tag: "Film", driveId: "TU_ID_5" }
+            { id: 1, title: "The Call", tag: "Advertising", driveId: "1b21prMq4JoGLJ1d4GzFTHbuDwuwn3_NK" },
+            { id: 2, title: "Urban Beat", tag: "Multimedia", driveId: "1c6HLUfio3Llnze3CkV8mHN9j1mXdZ45k" },
+            { id: 3, title: "Night Drive", tag: "Electronic", driveId: "1SJEjMJvVMK_WkDVxC8Ewpw42lk9VzheB" },
+            { id: 4, title: "Ethereal Landscapes", tag: "Cinematic", driveId: "1Vrw8DY1vGecQ-K0cyUBeLD76Ad9Wvd-a" },
+            { id: 5, title: "High Voltage", tag: "Rock Hybrid", driveId: "1nOPGLemkiR9SAQqURIXaTwvdmtSn7q2m" }
         ];
 
         const activeWaves = {};
@@ -222,26 +245,32 @@
             tracks.forEach(track => {
                 const url = `https://drive.google.com/uc?export=download&id=${track.driveId}`;
                 const div = document.createElement('div');
-                div.className = "glass p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 group hover:border-blue-500/30 transition-all";
+                div.className = "glass p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 group hover:border-blue-500/40 transition-all";
                 div.innerHTML = `
                     <div class="w-full md:w-1/4">
                         <span class="text-[9px] text-blue-500 font-bold uppercase tracking-widest">${track.tag}</span>
-                        <h3 class="text-lg font-bold tracking-tight">${track.title}</h3>
+                        <h3 class="text-xl font-bold tracking-tighter">${track.title}</h3>
                     </div>
                     <div class="w-full md:flex-1 waveform-box">
                         <div id="wave-${track.id}" class="h-10"></div>
                     </div>
-                    <button onclick="playTrack(${track.id}, '${url}')" class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all text-xs font-bold">PLAY</button>
+                    <button onclick="playTrack(${track.id}, '${url}', this)" class="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all text-[10px] font-black uppercase">PLAY</button>
                 `;
                 container.appendChild(div);
             });
         }
 
-        function playTrack(id, url) {
+        function playTrack(id, url, btn) {
             if (activeWaves[id]) {
                 activeWaves[id].playPause();
+                btn.innerText = activeWaves[id].isPlaying() ? "PAUSE" : "PLAY";
                 return;
             }
+            
+            // Pausar otros si están sonando
+            Object.values(activeWaves).forEach(ws => ws.pause());
+            document.querySelectorAll('#tracks-container button').forEach(b => b.innerText = "PLAY");
+
             const ws = WaveSurfer.create({
                 container: '#wave-' + id,
                 waveColor: '#1a1a1a',
@@ -250,10 +279,14 @@
                 barWidth: 2,
                 height: 40,
                 responsive: true,
-                barGap: 3
+                barGap: 3,
+                barRadius: 2
             });
             ws.load(url);
-            ws.on('ready', () => ws.play());
+            ws.on('ready', () => {
+                ws.play();
+                btn.innerText = "PAUSE";
+            });
             activeWaves[id] = ws;
         }
 
